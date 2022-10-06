@@ -1,129 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>EZ반도체</title>
+    <meta name="keywords" content="반도체, 교육, three.js">
+    <meta name="description" content="2022 인하대학교 캡스톤프로젝트">
+    <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
+
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
 <body>
-  <script type="module">
-	import * as THREE from 	'https://unpkg.com/three@0.126.1/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
-//import * as dat from 'dat.gui'
+    <header>
+        <h1><a href="index.html">EZ반도체</a></h1>
+        <nav class="upmenu">
+            <ul>
+                <li> <a href="#about">About</a> </li>
+                <li> <a href="#">Basic</a> </li>
+                <li> <a href="#">심화</a> </li>
+                <li> <a href="#">공정</a> </li>
+                <li> <a href="#">최신기술</a> </li>
+                <li> <a href="#">자료실</a> </li>
+            </ul>
+        </nav>
+    </header>
 
-/*const gui = new dat.GUI()
-const world = {
-  plane: {
-    width: 5,
-    height: 5,
-    widthSegments: 10,
-    heightSegments: 10
-  }
-}
-gui.add(world.plane, 'width', 1, 10).
-  onChange(() => {
-    generatePlane()
-  })
-gui.add(world.plane, 'height', 1, 10).
-  onChange(() => {
-    generatePlane()
-  })
-  gui.add(world.plane, 'widthSegments', 1, 20).
-  onChange(() => {
-    generatePlane()
-  })
-  gui.add(world.plane, 'heightSegments', 1, 20).
-  onChange(() => {
-    generatePlane()
-  })
-function generatePlane() {
-  planeMesh.geometry.dispose()
-  planeMesh.geometry = new THREE.
-    PlaneGeometry(
-      world.plane.width,
-      world.plane.height,
-      world.plane.widthSegments,
-      world.plane.heightSegments
-    )
-  const {array} = planeMesh.geometry.attributes.position
-  for (let i = 0; i < array.length; i += 3)  {
-    array[i + 2] = array[i + 2] + Math.random()
-  }
-}
-*/
-const scene = new THREE.Scene();
-const camera = new THREE.
-	PerspectiveCamera(
-    75,
-    innerWidth / innerHeight,
-    0.1,
-    1000
-  )
+    <main>
+        <div class="container">
+            <div class="sidebar">
+                <h3>이것은 사이드바임</h3>
+                <nav>
+                    <ol>
+                        <li> <a href="#">개요</a> </li>
+                        <li> <a href="#">FINFET</a> </li>
+                        <li> <a href="#">GAA</a> </li>
+                        <li> <a href="#">MBCFET</a> </li>
+                    </ol>
+                </nav>
+            </div>
+            <canvas class="three_content">
+                <script type="text/javascript" src="js/testscript.js"></script>
+            </canvas>
+            <div class="three_description">
+                <h3>설명공간임</h3>
+                <p>법률이 정하는 주요방위산업체에 종사하는 근로자의 단체행동권은 법률이 정하는 바에 의하여 이를 제한하거나 인정하지 아니할 수 있다. 탄핵결정은 공직으로부터 파면함에 그친다. 그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든 국민은 직업선택의 자유를 가진다. 이 헌법시행 당시의 대법원장과 대법원판사가 아닌 법관은 제1항 단서의 규정에 불구하고 이 헌법에 의하여 임명된 것으로 본다.</p>
+                <p>정기회의 회기는 100일을, 임시회의 회기는 30일을 초과할 수 없다. 대통령은 국무회의의 의장이 되고, 국무총리는 부의장이 된다. 법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다. 대법원장과 대법관이 아닌 법관은 대법관회의의 동의를 얻어 대법원장이 임명한다.</p>
+            </div>
+        </div>
+    </main>
 
-const raycaster = new THREE.Raycaster()
+    <footer>
+        <div class="developers">
+            <h3>Developers</h3>
+            <i>인하대학교 캡스톤프로젝트 3조<br></i>
+            <i><a href="#" style="color: hotpink;">교수님</a></i>
+            <i><a href="#">김예진</a></i>
+            <i><a href="https://github.com/junhyuk1229">김준혁</a></i>
+            <i><a href="https://github.com/fepick">오동걸</a></i>
+        </div>
+        <div class="sns">
+            <h3>Our SNS</h3>
+            <i><a href="#">김예진</a></i>
+            <i><a href="#">김준혁</a></i>
+            <i><a href="#">오동걸</a></i>
+        </div>
+        <div class="address">
+            <h3>Useful Links</h3>
+            <i><a href="#">반도체교육센터</a></i>
+            <i><a href="#">인하대학교</a></i>
+            <i><a href="#">대학원 상담실</a></i>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <a href="https://www.inha.ac.kr/kr/index.do">
+                    <img src="images/inhalogo.png" alt="" width="70">
+                </a>
+            </div>
+        </div>
+    </footer>
 
-const renderer = new THREE.WebGLRenderer()
-
-renderer.setSize(innerWidth, innerHeight)
-renderer.setPixelRatio(devicePixelRatio)
-document.body.appendChild(renderer.domElement)
-
-const material = new THREE.MeshBasicMaterial(
-  {color: 0x00FF00}
-)
-
-new OrbitControls(camera, renderer.domElement)
-camera.position.z = 5
-
-const planeGeometry = new THREE.
-  PlaneGeometry(5, 5, 10, 10)
-const planeMaterial = new THREE.
-  MeshPhongMaterial(
-    {
-      color: 0xFF0000,
-      side: THREE.DoubleSide,
-      flatShading: THREE.FlatShading
-    }
-  )
-
-const light = new THREE.DirectionalLight(
-  0xFFFFFF,
-  1
-)
-light.position.set(0, 0, 1)
-
-const backLight = new THREE.DirectionalLight(
-  0xFFFFFF,
-  1
-)
-backLight.position.set(0, 0, -1)
-
-const planeMesh = new THREE.Mesh(
-  planeGeometry, planeMaterial
-)
-
-const {array} = planeMesh.geometry.attributes.position
-for (let i = 0; i < array.length; i += 3)  {
-  array[i + 2] = array[i + 2] + Math.random()
-}
-
-scene.add(planeMesh)
-scene.add(light)
-scene.add(backLight)
-
-const mouse = {
-  x: undefined,
-  y: undefined
-}
-
-function animate()	{
-	requestAnimationFrame(animate)
-	renderer.render(scene, camera)
-  
-  raycaster.setFromCamera(mouse, camera)
-  const intersects = raycaster.
-    intersectObject(planeMesh)
-  console.log(intersects)
-}
-
-addEventListener('mousemove', (event) => {
-  mouse.x = (event.clientX / innerWidth - 0.5) * 2
-  mouse.y = -(event.clientY / innerHeight - 0.5) * 2
-})
-
-animate()
-  </script>
 </body>
+<script type="text/javascript" src="js/testscript.js"></script> 
+</html>
