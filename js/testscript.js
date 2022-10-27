@@ -1,5 +1,18 @@
-import * as THREE from 	'three';
+import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module';
 import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
+
+var myCanvas = document.querySelector('canvas.three_content')
+
+//렌더 선언
+const renderer = new THREE.WebGLRenderer({
+    canvas: myCanvas,
+    antialias: true
+})
+
+//렌더 사이즈 설정
+const widthHeightRatio = myCanvas.getBoundingClientRect()
+renderer.setSize(widthHeightRatio.width, widthHeightRatio.height)
+renderer.setPixelRatio(devicePixelRatio)
 
 //카메라 선언 및 설정
 const camera = new THREE.PerspectiveCamera(
@@ -7,7 +20,7 @@ const camera = new THREE.PerspectiveCamera(
   75,
 
   //화면 비율
-  innerWidth / innerHeight,
+  widthHeightRatio.width / widthHeightRatio.height,
 
   //볼 수 있는 가장 가까운 범위
   0.1,
@@ -19,23 +32,16 @@ const camera = new THREE.PerspectiveCamera(
 //카메라 위치 조정
 camera.position.z = 5
 
-var myCanvas = document.getElementById("three_content")
 
-//렌더 선언
-const renderer = new THREE.WebGLRenderer({canvas: myCanvas})
 
-//렌더 사이즈 설정
-renderer.setSize(innerWidth, innerHeight)
-renderer.setPixelRatio(devicePixelRatio)
 
-//렌더 사이트에 입력
-document.body.appendChild(renderer.domElement)
+
 
 //무대 선언
 const scene = new THREE.Scene();
 
-
-
+var canvas = renderer.domElement
+console.log(canvas)
 
 /////////////////////////////////////////////////////////////////////////////
 //코드 입력 장소
