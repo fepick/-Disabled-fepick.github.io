@@ -40,9 +40,6 @@ camera.position.z = 5
 //무대 선언
 const scene = new THREE.Scene();
 
-var canvas = renderer.domElement
-console.log(canvas)
-
 /////////////////////////////////////////////////////////////////////////////
 //코드 입력 장소
 
