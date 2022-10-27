@@ -19,13 +19,14 @@ const camera = new THREE.PerspectiveCamera(
 //카메라 위치 조정
 camera.position.z = 5
 
+var myCanvas = document.getElementById("three_content")
+
 //렌더 선언
-const renderer = new THREE.WebGLRenderer()
+const renderer = new THREE.WebGLRenderer({canvas: myCanvas})
 
 //렌더 사이즈 설정
 renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(devicePixelRatio)
-document.body.appendChild(renderer.domElement)
 
 //렌더 사이트에 입력
 document.body.appendChild(renderer.domElement)
