@@ -1,5 +1,25 @@
-import * as THREE from 	'https://unpkg.com/three@0.126.1/build/three.module.js';
+import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module';
 import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
+
+var myCanvas = document.querySelector('#canvas1')
+// myCanvas.width = 560
+// myCanvas.height = 315
+// 이상하게 CSS에서 canvas의 width와 height이 조절되지 않아서
+// 불가피하게 여기서 조절했습니다.
+// canvas의 비율은 하나로 정하는 것이 좋을 듯 합니다
+// 지금은 16:9비율로 고정되어있음
+
+
+//렌더 선언
+const renderer = new THREE.WebGLRenderer({
+    canvas: myCanvas,
+    antialias: true
+})
+
+//렌더 사이즈 설정
+const widthHeightRatio = myCanvas.getBoundingClientRect()
+renderer.setSize(widthHeightRatio.width, widthHeightRatio.height)
+renderer.setPixelRatio(devicePixelRatio)
 
 //카메라 선언 및 설정
 const camera = new THREE.PerspectiveCamera(
@@ -7,7 +27,7 @@ const camera = new THREE.PerspectiveCamera(
   75,
 
   //화면 비율
-  innerWidth / innerHeight,
+  widthHeightRatio.width / widthHeightRatio.height,
 
   //볼 수 있는 가장 가까운 범위
   0.1,
@@ -19,22 +39,13 @@ const camera = new THREE.PerspectiveCamera(
 //카메라 위치 조정
 camera.position.z = 5
 
-//렌더 선언
-const renderer = new THREE.WebGLRenderer()
 
-//렌더 사이즈 설정
-renderer.setSize(innerWidth, innerHeight)
-renderer.setPixelRatio(devicePixelRatio)
-document.body.appendChild(renderer.domElement)
 
-//렌더 사이트에 입력
-document.body.appendChild(renderer.domElement)
+
+
 
 //무대 선언
 const scene = new THREE.Scene();
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 //코드 입력 장소
