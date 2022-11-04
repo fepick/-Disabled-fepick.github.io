@@ -1,0 +1,9 @@
+{
+  "name": "three_project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "dat.gui": "^0.7.9"
+  }
+}

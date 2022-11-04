@@ -1,6 +1,7 @@
 import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module';
 import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
 
+<<<<<<< HEAD
 var myCanvas = document.querySelector('#canvas1')
 // myCanvas.width = 560
 // myCanvas.height = 315
@@ -9,6 +10,9 @@ var myCanvas = document.querySelector('#canvas1')
 // canvas의 비율은 하나로 정하는 것이 좋을 듯 합니다
 // 지금은 16:9비율로 고정되어있음
 
+=======
+var myCanvas = document.querySelector('canvas.three_content')
+>>>>>>> 229b1d0bd36e3bba54e99e8d325155eb4893579f
 
 //렌더 선언
 const renderer = new THREE.WebGLRenderer({
