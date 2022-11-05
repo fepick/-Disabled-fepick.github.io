@@ -1,5 +1,5 @@
-import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module';
-import { OrbitControls } from 'https://unpkg.com/three@0.142.0/examples/jsm/controls/OrbitControls';
+import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'https://cdn.skypack.dev/dat.gui';
 
 //Diode의 전압 설정
