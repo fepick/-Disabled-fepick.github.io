@@ -185,7 +185,7 @@ camera.position.z = 30
 //무대 선언
 const scene = new THREE.Scene();
 
-var canvas = renderer.domElement
+var myCanvas = document.querySelector('#canvas1')
 
 //다이오드 객체 정의
 const newDiode = new Diode(0.7)
