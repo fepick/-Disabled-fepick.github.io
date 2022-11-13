@@ -2,13 +2,17 @@
 /* 폰트를 한번 손봐야 합니다. 템플릿 참고하면서 대충 가져온 폰트입니다. */
 /* https://youtu.be/Y2NNmhrsoNc 참고 */
 
-
 /* basic */
-html {
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
     box-sizing: border-box;
-}
+  }
 
-footer, header, body, main{
+footer, header, main{
 	margin: 0;
     padding: 0;
     border: 0;
@@ -27,10 +31,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     border-bottom-color: transparent;
 }
 
-h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
-    font-weight: 600;
-}
-
 h2 {
     font-size: 2.85em;
 }
@@ -39,17 +39,11 @@ h3 {
     font-size: 1.25em;
 }
 
-h4 {
-    font-size: 1em;
-    margin: 0 0 0.25em 0;
-}
-
 a {
     color: inherit;
     border-bottom: solid 1px rgba(255, 255, 255, 0.400);
     text-decoration: none;
 }
-
     a:hover {
         color: #ef8376;
         border-bottom-color: transparent;
@@ -63,23 +57,35 @@ p {
     header {
         background: #003458;
         color: #fff;
-        padding-left: 32px;
-        padding-right: 32px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        position: fixed;
+        width: 100%;
     }
+        header nav{
+            display: inline-block;
+        }
         header ul{
             list-style-type: none;
             padding: 0;
         }
-
         header ul li{
             display: inline-block;
-            margin-left: 16px;
-            font-size: 18px;
+            margin-left: 0.5em;
+            font-size: 1.2em;
             font-weight: bold;
         }
+        .head_logo{
+            display: inline-block;
+        }
+        .navbar ol{
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ol li{
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        
 
 /* main */
     main {
@@ -87,15 +93,21 @@ p {
         line-height: 1.85em;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 300;
-        padding: 32px;
+        padding-top: 4em;
     }
 
 /* container */
     .three_content{
         aspect-ratio: 16/9;
+        padding: 0;
+        background: grey;
+        color: black;
     }
-
-
+    .three_description{
+        padding: 0.5em;
+        background: #003458;
+        color: #fff;
+    }
 
 /* footer */
     footer {
@@ -108,7 +120,6 @@ p {
 		background: #2b252c;
 		color: #fff;
     }
-
         .logo{
             margin: 0.5em;
             margin-top: 2em;
@@ -116,44 +127,19 @@ p {
             /* opacity: 0.7; */
         }
 
-
         /* 최대 화면크기 - 1200 */
         /* 그 이하의 경우, 화면의 최대폭에 맞춘 뒤 */
         /* 사이드바는 상단으로, 설명은 아래로 */
 @media (min-width: 1200px){
     .container {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 24px;
+        display: block;
         width: 1200px;
         margin: 0 auto;
         border: 0;
-        min-height: 300px;
         background-color: aquamarine;
     }    
-        .sidebar {
-            background: #003458;
-            padding: 0.5em;
-            color: #fff;
-            grid-column: 1/3;
-        }
-        .three_content { 
-            padding: 0;
-            background: grey;
-            color: black;
-            grid-column: 3/9;
-        }
-        .three_description{
-            padding: 0.5em;
-            background: #003458;
-            color: #fff;
-            grid-column: 9/13;
-        }
-        .sidebar ol li{
-            text-align: start;
-        }
+        
 }
-
 /* 화면이 작을경우 -> 블록으로 사이드바/컨텐츠/설명(반응형) */
 @media (max-width: 1200px){
     .container{
@@ -161,30 +147,6 @@ p {
         border: 0;
         background-color: darkkhaki;
     }
-            .sidebar{
-                display: block;
-                background: #003458;
-                padding: 0.5em;
-                color: #fff;
-            }
-
-            .sidebar ol li{
-                text-align: start;
-            }
-
-            .three_content{
-                display: block;
-                padding: 0;
-                background: grey;
-                color: black;
-            }
-            .three_description{
-                display: block;
-                overflow-y: scroll;
-                padding: 0.5em;
-                background: #003458;
-                color: #fff;
-            }
 }
 
 @media (prefers-color-scheme: light) {
