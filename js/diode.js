@@ -8,12 +8,14 @@ let voltageDiode = 0.7
 const TOTAL_ELECT_NUM = 100
 
 //gui 설정
-var gui = new dat.GUI();
+var gui = new dat.GUI({autoPlace: false});
 const guiVar = {
   Diode:  {
     Voltage: 0.7
   }
 }
+
+gui.domElement.id = 'gui';
 
 //전압의 변화 설정
 gui.add(guiVar.Diode, 'Voltage', -0.7, 1.7).onChange(() => {
