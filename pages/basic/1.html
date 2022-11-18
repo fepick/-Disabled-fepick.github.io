@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>EZ반도체</title>
+    <meta name="keywords" content="반도체, 교육, three.js">
+    <meta name="description" content="2022 인하대학교 캡스톤프로젝트">
+    <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <script type="module" src="diode.js"></script>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header_up">
+            <div class="header_logo" onclick="location.href='../../index.html'">
+                <img class="logo_img" src="../../images/EZlogo.png" alt="이미지업다">
+                <span class="logo_label">EZ반도체</span>
+            </div>
+            <div id="burgermenu">
+                <input type="checkbox" id="burger">
+                <label for="burger">
+                    <div class="burger_div"><h3>menu</h3></div>
+                </label>
+                <ul class="upmenus">
+                    <li class="upmenu_item"> <a href="../about/main.html">About</a> </li>
+                    <li class="upmenu_item"> <a href="../basic/main.html">Basic</a> </li>
+                    <li class="upmenu_item"> <a href="../advanced/main.html">advanced</a> </li>
+                    <li class="upmenu_item"> <a href="../process/main.html">공정</a> </li>
+                    <li class="upmenu_item"> <a href="../technology/main.html">최신기술</a> </li>
+                    <li class="upmenu_item"> <a href="../library/main.html">자료실</a> </li>
+                </ul>
+            </div>
+        </div>
+        <nav class="breadcrumb">
+            <ol class="breadcrumbs">
+              <li class="breadcrumb_item"><a href="main.html">1. Basic</a></li>
+              <li class="breadcrumb_item"><a href="1.html">1.1. Diode</a></li>
+              <li class="breadcrumb_item active">1.1.1. 서론</li>
+            </ol>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="three_content_control">
+                <div class="control_button" id="hide">hide</div>
+                <div class="control_button" id="gui">control</div>
+            </div>
+            <canvas class="three_content" id="canvas1">
+            </canvas>
+            <div class="three_description">
+                <h3>1.2. PN 다이오드</h3>
+                <p>
+                    두 반도체(p형, n형)의 접합으로 이루어진 다이오드입니다.
+                    <br>두 반도체의 에너지 레벨 차이를 전압으로 조절하여 전류가 흐르는 정도를 조절하는 소자입니다.
+                    <br>기본적으로 두 반도체(p형, n형)의 전자의 농도가 다르기 때문에 에너지 레벨의 차이가 존재합니다. 기본값을 기준으로 차이가 줄어드는 Forward와 차이가 늘어나는 reverse를 구분합니다.
+                </p>
+                <h3>1.3. Forward bias</h3>
+                <ul type="circle">
+                    <li><b>Diffusion</b>으로 전자가 이동하기 때문에 다량의 전류가 흐릅니다.</li>
+                    <li>Diffusion에서는 전자가 exp비율로 이동하기 때문에 전류도 exp로 증가합니다. </li>
+                </ul>
+                <img src="forward_.png" alt="">
+
+                <h3>1.4. Reverse bias</h3>
+                <ul type="circle">
+                    <li><b>Drift</b>로 전자가 이동하기 때문에 소량의 전류가 흐릅니다.</li>
+                    <li>reverse bias 상태에서는 일정한 양의 전자가 이동하기 때문에 전류도 일정한 양으로 흐릅니다. </li>
+                </ul>
+
+                <h3>1.4. 전제 조건</h3>
+                <p>
+                    위의 시뮬레이션은 비전공생과 관련 지식이 많지 않은 분들도 PN 다이오드의 기본동작을 보다 쉽게 이해시키기 위해서 많은 전제조건을 통해서 가장 이상적인 PN 다이오드의 동작을 구현했습니다.<br>
+                    위의 시뮬레이션에 사용된 전제조건은 다음과 같습니다.
+                </p>
+                <ul type="circle">
+                    <li><b>step juction, depletion approximation(공핍영역, 중성영역)</b></li>
+                    <li><b>Maxwell-Boltzmann approximation</b></li>
+                    <li><b>low level injuction</b></li>
+                    <li><b>총 전류는 모든 PN 구조에서 연속이며 일정</b></li>
+                    <li><b>revese bias는 breakdown voltage만큼 커지지 않는다.</b></li>
+                </ul>
+
+                <h3>1.5. PN 다이오드 +</h3>
+                <ul type="circle">
+                    <li>농도</li>
+                    <p>
+                        p형과 n형 semiconductor의 농도에 따라 동작이 변화합니다. 시뮬레이션에서는 두 semiconductor의 농도가 동일하다는 가정하에 진행했기 때문에 위와 같이 동작합니다.<br>
+                        둘의 농도가 차이가 매우 큰 상태의 PN Juction을 One-Side Juction이라고 합니다.<br>
+                    </p>
+                    <li>hole</li>
+                    <p>
+                        시뮬레이션에서는 홀에 대한 내용이 없습니다. 실질적으로 홀이란 전자가 빠져나간 공간을 의미하기 때문입니다. <br>
+                        그러나 전자의 움직임과 동일한데 전하만 마이너스라고 볼 수 없습니다. 그 이유는 전자와 홀은 effective mass가 다르기 때문입니다.<br>
+                        다른 이유는 전자가 반도체에서 움직일때와 홀이 움직일때 받는 영향이 다르며 홀이 더 움직이기가 어렵고 이를 홀의 effective mass가 무겁다(=덜 움직인다.)로 해석하기 때문입니다.<br>
+                        홀의 정확한 동작과 의미에 대해선 물리학적 지식이 필요하기 때문에 원한다면 더 찾아보시는 걸 추천합니다.
+                    </p>
+                </ul>
+            </div>
+            <div class="container_button">
+                <a class="container_button_item" href="main.html">&#60; prev</a>
+                <a class="container_button_item" href="2.html">next &#62;</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="developers">
+            <h3>Developers</h3>
+            <i>인하대학교 캡스톤프로젝트 3조<br></i>
+            <i><a href="#" style="color: hotpink;">교수님</a></i>
+            <i><a href="#">김예진</a></i>
+            <i><a href="https://github.com/junhyuk1229">김준혁</a></i>
+            <i><a href="https://github.com/fepick">오동걸</a></i>
+        </div>
+        <div class="sns">
+            <h3>Our SNS</h3>
+            <i><a href="#">김예진</a></i>
+            <i><a href="#">김준혁</a></i>
+            <i><a href="#">오동걸</a></i>
+        </div>
+        <div class="address">
+            <h3>Useful Links</h3>
+            <i><a href="#">반도체교육센터</a></i>
+            <i><a href="#">인하대학교</a></i>
+            <i><a href="#">대학원 상담실</a></i>
+        </div>
+        <div class="logo">
+            <a href="https://www.inha.ac.kr/kr/index.do">
+                <img src="../../images/inhalogo.png" alt="" width="70">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

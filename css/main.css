@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@300;400;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 /* basic */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 html, body{
     width: 100%;
     height: 100%;
@@ -52,9 +57,6 @@ a {
 p {
     text-align: justify;
 }
-.label{
-
-}
 
 /* header */
     header {
@@ -65,30 +67,29 @@ p {
         width: 100%;
     }
         .header_up{
-            display: block;
+            display: flex;
+            justify-content: space-between;
             height: 3em;
+            padding: 0 0.5em 0 0.5em;
         }
-        .upmenu{
-            display: inline-block;
-            margin: 0;
-            float: right;
+        .burger_div{
+            margin-top: 0.5em;
+            width: 6em;
+            height: 2em;
+            background-color: #2E3031;
+            text-align: center;
         }
         .upmenus{
-            margin-top: 7px;
-            
-        }
-        .upmenu_item{
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        header ul{
+            display: none;
             list-style-type: none;
             padding: 0;
+            
         }
-        header ul li{
-            display: inline-block;
-            margin-left: 0.5em;
-            font-size: 1.2em;
-            font-weight: bold;
+        .upmenus li{
+            background-color: #EA68A2;
+            margin-top: 2px;
+            width: 5em;
+            padding: 0 0.5em 0 0.5em;
         }
         .header_logo{
             display: inline-block;
@@ -98,8 +99,6 @@ p {
         .logo_img{
             height: 1.2em;
             vertical-align: middle;
-        }
-        .logo_label{
         }
         .breadcrumb{
             display: block;
@@ -117,6 +116,16 @@ p {
             display: inline;
         }
         .breadcrumb_item+.breadcrumb_item::before { content: "> "; }
+        input[id="burger"]{
+            display: none;
+        }
+        input[id="burger"] + label {
+            display: inline-block;
+            cursor:pointer;
+        }
+        input[id="burger"]:checked ~ .upmenus {
+            display: block;
+        }
 
 /* main */
     main {
@@ -126,8 +135,22 @@ p {
         line-height: 1.85em;
         padding: 4em 0em 0em 0em;
     }
+    .main_site{
+        list-style-type: none;
+    }
 
 /* container */
+    .three_content_control{
+        display: flex;
+        justify-content: space-between;
+    }
+    .control_button{
+        background-color: rgb(0, 104, 183);
+        width: 4em;
+        height: 2em;
+        border-radius: 18px;
+        text-align: center;
+    }
     .three_content{
         aspect-ratio: 16/9;
         width: 100%;
@@ -139,19 +162,15 @@ p {
     }
     .container_button{
         display: flex;
-        align-items:stretch;
+        justify-content: space-between;
         background-color: #4C4C4C;
     }
     .container_button_item{
         width: 4em;
         height: 2em;
+        border-radius: 18px;
         text-align: center;
         background-color: rgb(0, 104, 183);
-        border-radius: 18px;
-        
-    }
-    container_button_item:hover{
-        background-color: rgb(0, 80, 141);
     }
 
 /* footer */
@@ -218,4 +237,3 @@ p {
     /* 다크 모드에 적용할 스타일 정의 */
     /* 화면 우상단의 다크모드 체크박스와 연동 (기본값 미선택 - white)*/
 }
-

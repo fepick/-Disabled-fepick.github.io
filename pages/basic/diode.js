@@ -14,7 +14,6 @@ const guiVar = {
     Voltage: 0.7
   }
 }
-
 gui.domElement.id = 'gui';
 
 //전압의 변화 설정

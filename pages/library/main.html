@@ -7,51 +7,62 @@
     <meta name="description" content="2022 인하대학교 캡스톤프로젝트">
     <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
     <link rel="stylesheet" href="../../css/main.css" />
-    <script type="module" src="../../js/testscript.js"></script>
+    <script type="module" src="diode.js"></script>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <header>
         <div class="header_up">
-            <div class="header_logo" onclick="location.href='index.html'">
+            <div class="header_logo" onclick="location.href='../../index.html'">
                 <img class="logo_img" src="../../images/EZlogo.png" alt="이미지업다">
                 <span class="logo_label">EZ반도체</span>
             </div>
-            <nav class="upmenu">
+            <div id="burgermenu">
+                <input type="checkbox" id="burger">
+                <label for="burger">
+                    <div class="burger_div"><h3>menu</h3></div>
+                </label>
                 <ul class="upmenus">
-                    <li class="upmenu_item"> <a href="../../pages/about/main.html">About</a> </li>
-                    <li class="upmenu_item"> <a href="../../pages/basic/main.html">Basic</a> </li>
-                    <li class="upmenu_item"> <a href="../../pages/advanced/main.html">advanced</a> </li>
-                    <li class="upmenu_item"> <a href="../../pages/process/main.html">공정</a> </li>
-                    <li class="upmenu_item"> <a href="../../pages/technology/main.html">최신기술</a> </li>
-                    <li class="upmenu_item"> <a href="../../pages/library/main.html">자료실</a> </li>
+                    <li class="upmenu_item"> <a href="../about/main.html">About</a> </li>
+                    <li class="upmenu_item"> <a href="../basic/main.html">Basic</a> </li>
+                    <li class="upmenu_item"> <a href="../advanced/main.html">advanced</a> </li>
+                    <li class="upmenu_item"> <a href="../process/main.html">공정</a> </li>
+                    <li class="upmenu_item"> <a href="../technology/main.html">최신기술</a> </li>
+                    <li class="upmenu_item"> <a href="../library/main.html">자료실</a> </li>
                 </ul>
-            </nav>
+            </div>
         </div>
         <nav class="breadcrumb">
             <ol class="breadcrumbs">
-              <li class="breadcrumb_item"><a href="#">Basic</a></li>
-              <li class="breadcrumb_item"><a href="#">1.다이오드</a></li>
-              <li class="breadcrumb_item active">1.1.서론</li>
+              <li class="breadcrumb_item"><a href="main.html">A. Library</a></li>
+              <li class="breadcrumb_item active">A.0. main</li>
             </ol>
         </nav>
     </header>
 
     <main>
         <div class="container">
+            <div class="three_content_control">
+                <div class="control_button" id="hide">hide</div>
+                <div class="control_button" id="gui">control</div>
+            </div>
             <canvas class="three_content" id="canvas1">
             </canvas>
             <div class="three_description">
-                <h3>about의 테스트페이지입니다.</h3>
+                <h3>Library의 메인 페이지입니다.</h3>
+                <ol class="main_site">
+                    <li>링크1</li>
+                    <li>링크2</li>
+                    <li>링크3</li>
+                </ol>
             </div>
             <div class="container_button">
                 <a class="container_button_item" href="">&#60; prev</a>
-                <a class="container_button_item" style="margin-left:auto" href="">next &#62;</a>
+                <a class="container_button_item" href="1.html">next &#62;</a>
             </div>
         </div>
     </main>
-
     <footer>
         <div class="developers">
             <h3>Developers</h3>
