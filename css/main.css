@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
-/* 폰트를 한번 손봐야 합니다. 템플릿 참고하면서 대충 가져온 폰트입니다. */
-/* https://youtu.be/Y2NNmhrsoNc 참고 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@300;400;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
 /* basic */
 html, body{
@@ -13,6 +11,8 @@ html, body{
   }
 
 footer, header, main{
+    font-family: 'Noto Sans KR', 'Source Sans Pro', sans-serif;
+    font-weight: 300;
 	margin: 0;
     padding: 0;
     border: 0;
@@ -52,16 +52,33 @@ a {
 p {
     text-align: justify;
 }
+.label{
+
+}
 
 /* header */
     header {
-        background: #003458;
+        display: block;
+        background: rgb(60,60,60);
         color: #fff;
         position: fixed;
         width: 100%;
     }
-        header nav{
+        .header_up{
+            display: block;
+            height: 3em;
+        }
+        .upmenu{
             display: inline-block;
+            margin: 0;
+            float: right;
+        }
+        .upmenus{
+            margin-top: 7px;
+            
+        }
+        .upmenu_item{
+            font-family: 'Source Sans Pro', sans-serif;
         }
         header ul{
             list-style-type: none;
@@ -73,40 +90,68 @@ p {
             font-size: 1.2em;
             font-weight: bold;
         }
-        .head_logo{
+        .header_logo{
             display: inline-block;
+            cursor:pointer;
+            font-size: 2em;
         }
-        .navbar ol{
+        .logo_img{
+            height: 1.2em;
+            vertical-align: middle;
+        }
+        .logo_label{
+        }
+        .breadcrumb{
+            display: block;
+            margin: 0 0 0 3px;
+            padding: 0;
+            border: 0;
+            background-color: #2E3031;
+        }
+        .breadcrumbs{
             margin: 0;
             padding: 0;
+            border: 0;
         }
-        .navbar ol li{
-            margin: 0;
-            padding: 0;
-            display: inline-block;
+        .breadcrumb_item{
+            display: inline;
         }
-        
+        .breadcrumb_item+.breadcrumb_item::before { content: "> "; }
 
 /* main */
     main {
+        background-color: #2E3031;
+        color: #fff;
         font-size: 15pt;
         line-height: 1.85em;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 300;
-        padding-top: 4em;
+        padding: 4em 0em 0em 0em;
     }
 
 /* container */
     .three_content{
         aspect-ratio: 16/9;
+        width: 100%;
         padding: 0;
-        background: grey;
-        color: black;
     }
     .three_description{
         padding: 0.5em;
-        background: #003458;
-        color: #fff;
+        background: #1D1F21;
+    }
+    .container_button{
+        display: flex;
+        align-items:stretch;
+        background-color: #4C4C4C;
+    }
+    .container_button_item{
+        width: 4em;
+        height: 2em;
+        text-align: center;
+        background-color: rgb(0, 104, 183);
+        border-radius: 18px;
+        
+    }
+    container_button_item:hover{
+        background-color: rgb(0, 80, 141);
     }
 
 /* footer */
@@ -114,38 +159,53 @@ p {
 		height: 24em;
 		position: relative;
 		padding: 2em 0 2em 0;
-		margin: 2em 0 0 0;
+		margin: 0em 0 0 0;
 
 		text-align: center;
-		background: #2b252c;
+        background-color: #101314;
+		/* background: #2b252c; */
 		color: #fff;
     }
         .logo{
+            display: inline-block;
             margin: 0.5em;
             margin-top: 2em;
             background: #fff;
-            /* opacity: 0.7; */
         }
 
-        /* 최대 화면크기 - 1200 */
-        /* 그 이하의 경우, 화면의 최대폭에 맞춘 뒤 */
-        /* 사이드바는 상단으로, 설명은 아래로 */
+/* for-article */
+.box1{
+    border: red solid 1px;
+    margin: 0.5em;
+    padding: 1em;
+}
+.box2{
+    border: #FF007F solid 1px;
+    background-color: #4C4C4C;
+    margin: 0.5em;
+    padding: 1em;
+}
+.HL_yellow{
+    background-color: #FFE400;
+}
+.HL_pink{
+    background-color: #FF007F;
+}
+
 @media (min-width: 1200px){
     .container {
-        display: block;
         width: 1200px;
         margin: 0 auto;
         border: 0;
-        background-color: aquamarine;
+        background-color: rgb(60,60,60);
     }    
         
 }
-/* 화면이 작을경우 -> 블록으로 사이드바/컨텐츠/설명(반응형) */
 @media (max-width: 1200px){
     .container{
         margin: 0;
         border: 0;
-        background-color: darkkhaki;
+        background-color: rgb(60,60,60);
     }
 }
 
