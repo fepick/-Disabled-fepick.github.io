@@ -45,24 +45,63 @@
                 <h3>1.1. 서론</h3>
                 <p>
                     <img src="images/ex1.png" alt="">
-                <br>이것은 서론입니다.
-                <br> <span class="HL_pink">핑크색 하이라이트입니다.</span>
-                <br> <span class="HL_yellow">노란색 하이라이트입니다.</span>
-                <div class="box1">
-                    강조를 위한 박스1입니다
-                </div>
-                <div class="box2">
-                    강조를 위한 박스2입니다
-                </div>
+                    <br>이것은 서론입니다.
+                    <br> <span class="HL_pink">핑크색 하이라이트입니다.</span>
+                    <br> <span class="HL_yellow">노란색 하이라이트입니다.</span>
+                    <div class="box1">
+                        강조를 위한 박스1입니다
+                    </div>
+                    <div class="box2">
+                        강조를 위한 박스2입니다
+                    </div>
                 </p>
                 <h3>1.2. PN 다이오드</h3>
                 <p>
                     두 반도체(p형, n형)의 접합으로 이루어진 다이오드입니다.
-                <br>두 반도체의 에너지 레벨 차이를 전압으로 조절하여 전류가 흐르는 정도를 조절하는 소자입니다.
-                <br>기본적으로 두 반도체(p형, n형)의 전자의 농도가 다르기 때문에 에너지 레벨의 차이가 존재합니다. 기본값을 기준으로 차이가 줄어드는 Forward와 차이가 늘어나는 reverse를 구분합니다.
+                    <br>두 반도체의 에너지 레벨 차이를 전압으로 조절하여 전류가 흐르는 정도를 조절하는 소자입니다.
+                    <br>기본적으로 두 반도체(p형, n형)의 전자의 농도가 다르기 때문에 에너지 레벨의 차이가 존재합니다. 기본값을 기준으로 차이가 줄어드는 Forward와 차이가 늘어나는 reverse를 구분합니다.
                 </p>
                 <h3>1.3. Forward bias</h3>
+                <ul type="circle">
+                    <li><b>Diffusion</b>으로 전자가 이동하기 때문에 다량의 전류가 흐릅니다.</li>
+                    <li>Diffusion에서는 전자가 exp비율로 이동하기 때문에 전류도 exp로 증가합니다. </li>
+                </ul>
+                <img src="images/forward_.png" alt="">
+
                 <h3>1.4. Reverse bias</h3>
+                <ul type="circle">
+                    <li><b>Drift</b>로 전자가 이동하기 때문에 소량의 전류가 흐릅니다.</li>
+                    <li>reverse bias 상태에서는 일정한 양의 전자가 이동하기 때문에 전류도 일정한 양으로 흐릅니다. </li>
+                </ul>
+
+                <h3>1.4. 전제 조건</h3>
+                <p>
+                    위의 시뮬레이션은 비전공생과 관련 지식이 많지 않은 분들도 PN 다이오드의 기본동작을 보다 쉽게 이해시키기 위해서 많은 전제조건을 통해서 가장 이상적인 PN 다이오드의 동작을 구현했습니다.<br>
+                    위의 시뮬레이션에 사용된 전제조건은 다음과 같습니다.
+                </p>
+                <ul type="circle">
+                    <li><b>step juction, depletion approximation(공핍영역, 중성영역)</b></li>
+                    <li><b>Maxwell-Boltzmann approximation</b></li>
+                    <li><b>low level injuction</b></li>
+                    <li><b>총 전류는 모든 PN 구조에서 연속이며 일정</b></li>
+                    <li><b>revese bias는 breakdown voltage만큼 커지지 않는다.</b></li>
+                </ul>
+
+                <h3>1.5. PN 다이오드 +</h3>
+                <ul type="circle">
+                    <li>농도</li>
+                    <p>
+                        p형과 n형 semiconductor의 농도에 따라 동작이 변화합니다. 시뮬레이션에서는 두 semiconductor의 농도가 동일하다는 가정하에 진행했기 때문에 위와 같이 동작합니다.<br>
+                        둘의 농도가 차이가 매우 큰 상태의 PN Juction을 One-Side Juction이라고 합니다.<br>
+                    </p>
+                    <li>hole</li>
+                    <p>
+                        시뮬레이션에서는 홀에 대한 내용이 없습니다. 실질적으로 홀이란 전자가 빠져나간 공간을 의미하기 때문입니다. <br>
+                        그러나 전자의 움직임과 동일한데 전하만 마이너스라고 볼 수 없습니다. 그 이유는 전자와 홀은 effective mass가 다르기 때문입니다.<br>
+                        다른 이유는 전자가 반도체에서 움직일때와 홀이 움직일때 받는 영향이 다르며 홀이 더 움직이기가 어렵고 이를 홀의 effective mass가 무겁다(=덜 움직인다.)로 해석하기 때문입니다.<br>
+                        홀의 정확한 동작과 의미에 대해선 물리학적 지식이 필요하기 때문에 원한다면 더 찾아보시는 걸 추천합니다.
+                    </p>
+                </ul>
             </div>
             <div class="container_button">
                 <a class="container_button_item" href="">&#60; prev</a>

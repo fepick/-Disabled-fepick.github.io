@@ -61,7 +61,7 @@ class Diode {
   initModel(scene) {
     let heightArr = [3 / 8, 2 / 8, 3 / 8]
     let xPos = [-5 / 16, 0, 5 / 16]
-    let colorArr = [0x00FFFF, 0x666666, 0xFF00FF]
+    let colorArr = [0x0068B7, 0x666666, 0xEA68A2]
     this.modelMeshArr = []
     this.lineMeshArr = []
     for(let i = 0; i < 3; i++)  {
@@ -81,7 +81,7 @@ class Diode {
     this.holeMeshArr = []
     this.zeroMeshArr = []
     for(let i = 0; i < TOTAL_ELECT_NUM; i++)  {
-      this.zeroMeshArr.push(new THREE.Mesh(new THREE.SphereGeometry(this.zeroHoleRadius, 32, 16), new THREE.MeshBasicMaterial({color: 0xFF0000})))
+      this.zeroMeshArr.push(new THREE.Mesh(new THREE.SphereGeometry(this.zeroHoleRadius, 32, 16), new THREE.MeshBasicMaterial({color: 0xFFFF00})))
       this.holeMeshArr.push(new THREE.Mesh(new THREE.SphereGeometry(this.zeroHoleRadius, 32, 16), new THREE.MeshBasicMaterial({color: 0xFFFFFF})))
       this.resetZeroHole(i)
       scene.add(this.zeroMeshArr[i])
