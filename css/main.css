@@ -155,6 +155,10 @@ p {
         aspect-ratio: 16/9;
         width: 100%;
         padding: 0;
+        margin-bottom: 0px;
+    }
+    .moveGUI{
+        position: absolute;
     }
     .three_description{
         padding: 0.5em;
