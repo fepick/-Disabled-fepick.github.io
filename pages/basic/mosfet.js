@@ -6,17 +6,13 @@ import * as dat from 'https://cdn.skypack.dev/dat.gui';
 const TOTAL_ELECT_NUM = 50
 
 //gui 설정
-var gui = new dat.GUI();
+var gui = new dat.GUI({autoPlace: false});
 const guiVar = {
   MOSFET: {
     gateSourceVoltage: 3,
     drainSourceVoltage: 1
   }
 }
-
-//gui.domElement.id = 'gui';
-
-var customContainer = $('.moveGUI').append($(gui.domElement));
 
 //MOSFET 클래스
 class Mosfet  {
@@ -293,7 +289,9 @@ class Mosfet  {
 }
 
 //캔버스 설정
-var myCanvas = document.querySelector('canvas.three_content')
+var myCanvas = document.querySelector('#canvas1')
+var guiDiv = document.querySelector('#gui')
+guiDiv.append(gui.domElement)
 
 //렌더 선언
 const renderer = new THREE.WebGLRenderer({
@@ -329,7 +327,6 @@ camera.position.set(0, 0, 30);
 //무대 선언
 const scene = new THREE.Scene();
 
-var myCanvas = document.querySelector('#canvas1')
 
 //다이오드 객체 정의
 const newMOS = new Mosfet(3, 1, 0, 0)
