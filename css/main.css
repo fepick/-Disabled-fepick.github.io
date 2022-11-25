@@ -143,9 +143,6 @@ input[type="checkbox"] + label{
         line-height: 1.85em;
         padding: 4em 0em 0em 0em;
     }
-    .main_site{
-        list-style-type: none;
-    }
 
 /* container */
     .container img{
@@ -176,7 +173,7 @@ input[type="checkbox"] + label{
         background: #1D1F21;
     }
     .three_description li{
-        margin-left: 2em;
+        margin-left: 1.5em;
     }
     .container_button{
         display: flex;
