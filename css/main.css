@@ -57,6 +57,13 @@ a {
 p {
     text-align: justify;
 }
+
+hr {
+    background-color: #fff;
+    height: 2px;
+    margin: 3em 0 3em 0;
+}
+
 input[type="checkbox"]{
     display: none;
 }
@@ -64,7 +71,6 @@ input[type="checkbox"] + label{
     display: inline-block;
     cursor:pointer;
 }
-
 
 /* header */
     header {
@@ -103,6 +109,7 @@ input[type="checkbox"] + label{
             display: inline-block;
             cursor:pointer;
             font-size: 2em;
+            white-space:nowrap;
         }
         .logo_img{
             height: 1.2em;
@@ -141,6 +148,9 @@ input[type="checkbox"] + label{
     }
 
 /* container */
+    .container img{
+        max-width: 100%;
+    }
     .three_content_control{
         display: flex;
         justify-content: space-between;
@@ -152,12 +162,6 @@ input[type="checkbox"] + label{
         border-radius: 18px;
         text-align: center;
     }
-    /* input[id="control_button_hide"]:checked ~ . {
-        display: block;
-    }
-    input[id="control_button_gui"]:checked ~ . {
-        display: block;
-    } */
     .three_content{
         aspect-ratio: 16/9;
         width: 100%;
@@ -168,8 +172,11 @@ input[type="checkbox"] + label{
         position: absolute;
     }
     .three_description{
-        padding: 0.5em;
+        padding: 1em 0.5em 3em 0.5em;
         background: #1D1F21;
+    }
+    .three_description li{
+        margin-left: 2em;
     }
     .container_button{
         display: flex;
@@ -204,6 +211,9 @@ input[type="checkbox"] + label{
         }
 
 /* for-article */
+.caption{
+    
+}
 .box1{
     border: red solid 1px;
     margin: 0.5em;
@@ -217,6 +227,7 @@ input[type="checkbox"] + label{
 }
 .HL_yellow{
     background-color: #FFE400;
+    color: #101314;
 }
 .HL_pink{
     background-color: #FF007F;
@@ -233,7 +244,7 @@ input[type="checkbox"] + label{
         width: 1200px;
     }    
 }
-@media (max-width: 340px){
+@media (max-width: 320px){
     .logo_label{
         display: none;
     }
@@ -241,10 +252,8 @@ input[type="checkbox"] + label{
 
 @media (prefers-color-scheme: light) {
     /* 라이트 모드에 적용할 스타일 정의 */
-    /* 화면 우상단의 다크모드 체크박스와 연동 (기본값 미선택 - white)*/
 }
 
 @media (prefers-color-scheme: dark) {
     /* 다크 모드에 적용할 스타일 정의 */
-    /* 화면 우상단의 다크모드 체크박스와 연동 (기본값 미선택 - white)*/
 }
