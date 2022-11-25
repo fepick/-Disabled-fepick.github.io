@@ -14,7 +14,6 @@ const guiVar = {
     Voltage: 0.7
   }
 }
-gui.domElement.id = 'gui';
 
 //전압의 변화 설정
 gui.add(guiVar.Diode, 'Voltage', -0.7, 1.7).onChange(() => {
@@ -152,7 +151,9 @@ class Diode {
 }
 
 //캔버스 설정
-var myCanvas = document.querySelector('canvas.three_content')
+var myCanvas = document.querySelector('#canvas1')
+var guiDiv = document.querySelector('#gui')
+guiDiv.append(gui.domElement)
 
 //렌더 선언
 const renderer = new THREE.WebGLRenderer({
