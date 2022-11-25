@@ -8,8 +8,8 @@
     <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../../css/main.css" />
-    <script type="module" src="diode.js"></script>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../../js/main.js"></script>
+
 </head>
 <body>
     <header>
@@ -44,12 +44,52 @@
     <main>
         <div class="container">
             <div class="three_content_control">
-                <div class="control_button" id="hide">hide</div>
-                <div class="control_button" id="gui">control</div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_hide" onclick="hide_three_content(this);">
+                    <label for="control_button_hide">
+                        <div id="hide_label">hide</div>
+                    </label>
+                </div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_gui">
+                    <label for="control_button_gui">
+                        <div class="">gui</div>
+                    </label>
+                </div>
+            </div>
+            <div  class = 'moveGUI' id="gui">
             </div>
             <canvas class="three_content" id="canvas1">
             </canvas>
             <div class="three_description">
+                <h3>3.0. 반도체 공정</h3>
+
+                <p>
+                    반도체에서는 여러가지 생산공정들이 있지만 그중에서도 꼭 필요한 공정을 모아서 8대 공정으로 정리해 표현하고 있습니다.
+                </p>
+
+                <p>반도체의 8대 공정은 <b>웨이퍼, 산화, 포토, 식각, 박막, 금속배선, EDS, 패키징</b>으로 구성되어 있습니다.</p>
+                <br>
+                <h3>3.1. 반도체 8대 공정</h3>
+                <div class="box1">
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-1-what-is-a-wafer/">1) wafer 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-2-oxidation-to-protect-the-wafer/">2) 산화 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-4-photolithography-laying-the-blueprint/">3) Photo 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-5-etching-a-circuit-pattern/">4) 식각 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-6-deposition-and-ion-implantation-for-the-electrical-properties/">5) 증착 & 이온주입 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-7-metal-interconnects-electrical-highways/">6) 금속 배선 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-8-eds-electrical-die-sorting-for-the-perfect-chips/">7) EDS 공정</a><br>
+
+                    <a href="https://semiconductor.samsung.com/kr/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-9-packaging-to-protect-the-chips-from-external-elements/">8) 패키징 공정</a><br>
+                </div>
+                
                 <h3>Process의 메인 페이지입니다.</h3>
                 <ol start="3">
                     <li>Process

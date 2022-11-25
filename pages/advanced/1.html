@@ -8,8 +8,8 @@
     <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../../css/main.css" />
-    <script type="module" src="diode.js"></script>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../../js/main.js"></script>
+
 </head>
 <body>
     <header>
@@ -45,19 +45,32 @@
     <main>
         <div class="container">
             <div class="three_content_control">
-                <div class="control_button" id="hide">hide</div>
-                <div class="control_button" id="gui">control</div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_hide" onclick="hide_three_content(this);">
+                    <label for="control_button_hide">
+                        <div id="hide_label">hide</div>
+                    </label>
+                </div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_gui">
+                    <label for="control_button_gui">
+                        <div class="">gui</div>
+                    </label>
+                </div>
+            </div>
+            <div  class = 'moveGUI' id="gui">
             </div>
             <canvas class="three_content" id="canvas1">
             </canvas>
             <div class="three_description">
                 <h3>2.1. Finfet</h3>
                 <p>
-                    글
-                    <br>글글
-                    <br>글글글
+                    기존 평면(2D) 구조의 한계를 극복하기 위해 도입된 입체(3D) 구조의 공정 기술로, 구조가 물고기 지느러미(Fin)와 비슷해 핀펫(FinFET)이라고 부릅니다.<br>
+                    트랜지스터는 게이트에 전압이 가해지면 채널을 통해 ‘Source’에서 ‘Drain’으로 전류가 흐르며 동작하게 됩니다. 이때 게이트와 채널과의 접점이 클수록 효율이 높아지는데, 핀펫 공정은 핀(Fin) 모양의 3D 구조를 적용, 접점 면적을 키워 반도체 성능 향상 및 누설 전류를 줄인 반도체 입니다.<br>
+                    FinFET 중에서도 bulk FinFET은 현재 서울대 이종호 교수님에 의해 특허가 출원되어 상용화가 된 기술이다.<br>
+                    특허출원 과정에 재밌는 사실들이 몇가지를 친숙하게 읽을 수 있기 때문에 궁금하다면 검색해보는걸 추천한다.<br>
                 </p>
-                
+                <img src="finfet.png" alt="">
             </div>
             <div class="container_button">
                 <a class="container_button_item" href="main.html">&#60; prev</a>

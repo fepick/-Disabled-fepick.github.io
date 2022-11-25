@@ -8,8 +8,7 @@
     <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../../css/main.css" />
-    <script type="module" src="mosfet.js"></script>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../../js/main.js"></script>
 </head>
 <body>
     <header>
@@ -45,15 +44,31 @@
     <main>
         <div class="container">
             <div class="three_content_control">
-                <div class="control_button" id="hide">hide</div>
-                <div class="control_button" id="gui">control</div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_hide" onclick="hide_three_content(this);">
+                    <label for="control_button_hide">
+                        <div id="hide_label">hide</div>
+                    </label>
+                </div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_gui">
+                    <label for="control_button_gui">
+                        <div class="">gui</div>
+                    </label>
+                </div>
+            </div>
+            <div  class = 'moveGUI' id="gui">
             </div>
             <canvas class="three_content" id="canvas1">
             </canvas>
             <div class="three_description">
-                <!-- 글 쓸 부분 -->
-                2번째 페이지입니다.
-                <!-- 글 쓸 부분 -->
+                <h1>0.2 Who are you?</h1>
+                <br>저희는 전자공학과 학생들로 저희의 관심분야들을 모아서 하나의 Project를 만들어보고 싶다고 생각했습니다.<br>
+                이 생각이 결과가 되어 저희의 관심분야인 반도체와 컴퓨터 프로그래밍을 모은 반도체 시뮬레이션 웹사이트를 제작하게 되었습니다.<br>
+                김예진 : 교육자료에 넣을 내용을 조사해 정리합니다.<br>
+                김준혁 : Three.js와 관련된 구현을 총괄하고, 최적화합니다. 3D 모형과 애니메이션을 구현합니다.<br>
+                오동걸 : HTML을 이용해 기본적인 웹사이트를 구현하고, UI/UX, 반응형 웹 등 보다 사용자에게 가까운 부분을 구현합니다.<br>
+                <br>
             </div>
             <div class="container_button">
                 <a class="container_button_item" href="1.html">&#60; prev</a>

@@ -8,8 +8,8 @@
     <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../../css/main.css" />
-    <script type="module" src="mosfet.js"></script>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../../js/main.js"></script>
+
 </head>
 <body>
     <header>
@@ -45,15 +45,42 @@
     <main>
         <div class="container">
             <div class="three_content_control">
-                <div class="control_button" id="hide">hide</div>
-                <div class="control_button" id="gui">control</div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_hide" onclick="hide_three_content(this);">
+                    <label for="control_button_hide">
+                        <div id="hide_label">hide</div>
+                    </label>
+                </div>
+                <div class="control_button">
+                    <input type="checkbox" id="control_button_gui">
+                    <label for="control_button_gui">
+                        <div class="">gui</div>
+                    </label>
+                </div>
+            </div>
+            <div  class = 'moveGUI' id="gui">
             </div>
             <canvas class="three_content" id="canvas1">
             </canvas>
             <div class="three_description">
-                <!-- 글 쓸 부분 -->
-                두번째 페이지입니다.
-                <!-- 글 쓸 부분 -->
+                <h3>2.2. GAA & MBCFET</h3>
+                <h3>2.2.1. GAA</h3>
+                <p>
+                    트랜지스터는 게이트(Gate)에 전압이 가해지면 채널(Channel)을 통해 소스(Source)와 드레인(Drain)으로 전류가 흐르면서 동작하게 됩니다. <br>
+                    기존에 사용하던 평판(Planar) 트랜지스터는 게이트와 채널이 하나의 면으로 맞닿아 있는 평면(2D)구조로 트랜지스터의 크기를 줄이다 보면 소스와 드레인 간 거리가 가까워져 게이트가 제 역할을 못하고 누설전류가 생기는 단채널(Short Channel) 현상이 발생하는 등 동작 전압을 낮추는 데 한계가 있었습니다.<br>
+                    이를 개선하기 위해 입체(3D) 구조의 공정기술이 개발되었는데 이를 핀펫(FinFET)이라고 합니다. 구조가 물고기 지느러미(Fin) 모양을 닮았다고 해서 핀 트랜지스터라고 부릅니다.<br>
+                    게이트와 채널 간 접하는 면이 넓을수록 효율이 높아진다는 점에서 착안해 게이트와 채널이 3면에서 맞닿는 3차원 구조로 접점 면적을 키워 반도체 성능을 향상시켰습니다.<br>
+                    Fin 트랜지스터는 여전히 첨단 반도체 공정에 사용되고 있지만 최근 4나노 이후의 공정에서는 더 이상 동작 전압을 줄일 수 없다는 한계가 발견되었습니다.<br>
+                    이를 위해 새롭게 탄생한 것이 바로 차세대 3나노 GAA(Gate-All-Around) 구조입니다.<br>
+                    3나노 이하 초미세 회로에 도입될 GAA구조의 트랜지스터는 전류가 흐르는 채널 4면을 게이트가 둘러싸고 있어 전류의 흐름을 보다 세밀하게 제어하는 등 채널 조정 능력을 극대화했습니다. 이로 인해 높은 전력 효율을 얻을 수 있습니다.
+                </p>
+                <h3>2.2.2. MBCFET</h3>
+                <p>
+                    단면의 지름이 1나노미터 정도로 얇은 와이어(Wire) 형태의 채널의 경우 충분한 전류를 얻기가 힘든 점을 개선한 것으로, 종이처럼 얇고 긴 모양의 나노시트(Nano Sheet)를 여러 장 적층해 성능과 전력효율을 높인 독자적인 기술 MBCFET™(Multi Bridge Channel FET)입니다.<br>
+                    MBCFET™ 공정은 최신 7나노 핀펫 트랜지스터보다도 차지하는 공간을 45% 가량 줄일 수 있으며, 약 50%의 소비전력 절감과 약 35%의 성능 개선 효과가 있을 것으로 기대됩니다.<br>
+                    뿐만 아니라 나노시트 너비를 특성에 맞게 조절할 수 있어 높은 설계 유연성을 갖고 있으며, 핀펫 공정과도 호환성이 높아 기존 설비와 제조 기술을 활용할 수 있다는 장점도 있습니다.
+                </p>
+                <img src="gaa_mbcfet.png" alt="">
             </div>
             <div class="container_button">
                 <a class="container_button_item" href="1.html">&#60; prev</a>
