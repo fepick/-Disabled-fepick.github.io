@@ -31,7 +31,7 @@ const camera = new THREE.PerspectiveCamera(
 )
 
 //카메라 위치 조정
-camera.position.set(0, 0, 20);
+camera.position.set(0, 0, 10);
 
 //무대 선언
 const scene = new THREE.Scene();
