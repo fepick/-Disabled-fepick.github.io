@@ -8,9 +8,7 @@
     <meta name="author" content="담당교수 : 김영진 / 제작 : 김예진, 김준혁, 오동걸">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="css/main.css" />
-    <script src="../../js/main.js"></script>
-    <script type="module" src="js/logo.js"></script>
-
+    <script src="js/main.js"></script>
 </head>
 <body>
     <header>
@@ -36,7 +34,11 @@
         </div>
     </header>
     <main>
-        <div class="container">
+        <div class="container" style="
+        background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(images/index_bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        ">
             <div class="three_content_control">
                 <div class="control_button">
                     <input type="checkbox" id="control_button_hide" onclick="hide_three_content(this);">
@@ -51,43 +53,25 @@
                     </label>
                 </div>
             </div>
-            <div  class = 'moveGUI' id="gui">
-            </div>
-            <canvas class="three_content" id="canvas1">
-            </canvas>
-            <div class="three_description">
-                <h3>1.1. 서론</h3>
-                <p>
-                    <img class = "" src="images/ex1.png" alt="">
-                    <br>이것은 서론입니다.
-                    <br> <span class="HL_pink">핑크색 하이라이트입니다.</span>
-                    <br> <span class="HL_yellow">노란색 하이라이트입니다.</span>
-                    <div class="box1">
-                        강조를 위한 박스1입니다
-                    </div>
-                    <div class="box2">
-                        강조를 위한 박스2입니다
-                    </div>
-                </p>
-                <hr>
-                <p>
-                    <ol>
-                        <h3>2022.12.02 패치노트</h3>
-                        <li>많은 three.js 모델들이 추가됨</li>
-                        <li>TMI 페이지 추가(다시 없어질수도 있음)</li>
-                    </ol>
-                    <br>
-                        <h3>확인된 버그</h3>
-                    <ul>
-                        <li>checkbox의 클릭 범위가 텍스트 범위로 한정되는 문제</li>
-                        <li>three.js 컨트롤이 특정 범위 밖에선 사라지게 할 수 있는지?</li>
-                        <li>h1 h2 li ol 등에 margin이 없으니 너무 답답해 보임</li>
-                    </ul>
-                </p>
+            <div class = 'moveGUI' id="gui"></div>
+            <div style="height: 100em;">
+                <div style="font-size:3em; width:fit-content; margin: 2em 2em 2em 2em;">
+                    <h1><b><span style="color:rgb(0, 104, 183);">E</span><span style="color: #EA68A2;">Z</span>반도체</h1>
+                    <br><br><br><br><br><br>
+                    <p>반도체 인재 양성을 위한,<br><br><span style="color: #5fc466;">보다 쉬운</span> 반도체 교육</p>
+                </div>
+
+                <div style="font-size:3em; width:fit-content; margin: 6em 2em 2em 6em;">
+                    <p> <span style="color: #5fc466;">쉬운 학습</span>을 위한,<br><br><span style="color:rgb(0, 104, 183);">3D모델</span> 및<br><br><span style="color: #EA68A2;">3D 애니메이션</span> 제공</p>
+                </div>
+
+                <div style="font-size:3em; width:fit-content; margin: 8em 2em 2em 10em;">
+                    <a href="pages/about/main.html"><h1 style="color: #5fc466;"><b>시작하기</h1></a>
+                </div>
             </div>
             <div class="container_button">
                 <a class="container_button_item" href="">&#60; prev</a>
-                <a class="container_button_item" href="">next &#62;</a>
+                <a class="container_button_item" href="pages/about/main.html">next &#62;</a>
             </div>
         </div>
     </main>

@@ -24,10 +24,15 @@ footer, header, main{
     display: block;
 }
 
+footer,header{
+    z-index: 100;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     color: #fff;
     line-height: 1.25em;
+    margin-bottom: 0.5em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -56,12 +61,17 @@ a {
 
 p {
     text-align: justify;
+    margin-bottom: 0.5em;
 }
 
 hr {
     background-color: #fff;
     height: 2px;
     margin: 3em 0 3em 0;
+}
+
+ol,ul {
+    margin: 0.5em 0 0.5em 0;
 }
 
 input[type="checkbox"]{
@@ -169,7 +179,7 @@ input[type="checkbox"] + label{
         position: absolute;
     }
     .three_description{
-        padding: 1em 0.5em 3em 0.5em;
+        padding: 1em 1em 4em 1em;
         background: #1D1F21;
     }
     .three_description li{
@@ -211,6 +221,7 @@ input[type="checkbox"] + label{
 .caption{
     
 }
+
 .box1{
     border: red solid 1px;
     margin: 0.5em;

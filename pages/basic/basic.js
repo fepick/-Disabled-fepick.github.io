@@ -415,8 +415,6 @@ class Mosfet  {
 
 //캔버스 설정
 var myCanvas = document.querySelector('#canvas1')
-var guiDiv = document.querySelector('#gui')
-guiDiv.append(gui.domElement)
 
 //렌더 선언
 const renderer = new THREE.WebGLRenderer({
