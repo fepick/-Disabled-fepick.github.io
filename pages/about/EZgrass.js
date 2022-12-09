@@ -5,6 +5,7 @@ let camera, controls, scene, renderer, loader;
 let plane, Ebox=[], Zbox=[], box;
 var myCanvas = document.querySelector('#canvas1')
 var widthHeightRatio = myCanvas.getBoundingClientRect()
+const start = Date.now();
 
 init();
 animate();
@@ -15,7 +16,7 @@ function init() {
     camera.position.set(5, 5, 7);
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x5F8A91 );
+    scene.background = new THREE.Color( 0x161616 );
 
     const pointLight1 = new THREE.PointLight( 0xffffff );
     pointLight1.position.set( -4, 7, 3 );
@@ -58,7 +59,6 @@ function init() {
     plane.position.set(2,0,0);
     plane.rotation.set(- Math.PI/2,0,0);
     scene.add( plane );
-
     
     renderer = new THREE.WebGLRenderer({canvas: myCanvas, antialias: true});
     renderer.setSize(widthHeightRatio.width, widthHeightRatio.height);
@@ -69,5 +69,17 @@ function init() {
 
 function animate() {
     requestAnimationFrame( animate );
+    
+    const timer = Date.now() - start;
+
+    for (const Ebox_element of Ebox) {
+        Ebox_element.position.y += Math.sin( timer * 0.008 )/80;
+    }
+    for (const Zbox_element of Zbox) {
+        Zbox_element.position.y += Math.cos( timer * 0.008 )/80;
+    }
+
+    controls.update();
+
     renderer.render(scene, camera)
 }

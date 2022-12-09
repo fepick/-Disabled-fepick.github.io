@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     color: #fff;
     line-height: 1.25em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -72,6 +72,10 @@ hr {
 
 ol,ul {
     margin: 0.5em 0 0.5em 0;
+}
+
+img{
+    max-width: 100%;
 }
 
 input[type="checkbox"]{
@@ -155,9 +159,6 @@ input[type="checkbox"] + label{
     }
 
 /* container */
-    .container img{
-        max-width: 100%;
-    }
     .three_content_control{
         display: flex;
         justify-content: space-between;
@@ -184,6 +185,11 @@ input[type="checkbox"] + label{
     }
     .three_description li{
         margin-left: 1.5em;
+    }
+    .three_description img{
+        display: block;
+        width: 75%;
+        margin: 0 auto;
     }
     .container_button{
         display: flex;
@@ -250,11 +256,19 @@ input[type="checkbox"] + label{
 @media (min-width: 1200px){
     .container {
         width: 1200px;
-    }    
+    }
+    .three_description img{
+        display: block;
+        width: 75%;
+        margin: 2em auto;
+    }
 }
 @media (max-width: 320px){
     .logo_label{
         display: none;
+    }
+    .three_description img{
+        width: 100%;
     }
 }
 

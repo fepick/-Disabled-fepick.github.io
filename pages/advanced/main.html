@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../../css/main.css" />
     <script src="../../js/main.js"></script>
+    <script type="module" src="advanced.js"></script>
 
 </head>
 <body>
@@ -63,7 +64,26 @@
             </canvas>
             <div class="three_description">
                 <!-- 글쓸부분 -->
-                <h3>Advanced의 메인 페이지입니다.</h3>
+                <h1>Advanced의 메인 페이지입니다.</h1>
+                    반도체 산업은 성능향상과 생산비용을 낮추기 위해서 scaling down을 해왔습니다.
+                    <br>처음에는 dimension과 supply voltage를 동일한 비율로 줄여서 e-field를 동일하게 유지하는 방식으로 scaling down했으나,
+                <br>누설전류 문제가 심각해져 <b>constant voltage scaling</b>의 방식을 선택하게 되었습니다.
+                <br>
+                <br>dimension은 줄이는데 supply voltage는 유지하는 방식의 sacling down으로 성능은 향상되었지만,
+                <br>누설전류의 문제를 여전히 해결하지 못했습니다.
+                <br>
+                <br>그래서 현재도 사용하는 <b>Generalized scaling</b>의 방식을 사용하게 되었습니다.
+                <br>dimension을 줄일 때, supply voltage도 줄이지만 공급전압을 더 작은 비율로 줄입니다.
+                <br>그 dimension의 scaling down 비율을 따라갈 수 없기 때문입니다. 
+                <br>
+                <br>scaling down하는 과정에서 side effect들이 발생했고,
+                <br>이를 해결하기 위해서 농도를 높히거나 다른 물질을 사용하는 등의 방식으로 문제를 해결해왔으나
+                <br>그 중에 가장 critical한 문제인 MOSFET에서 gate의 장악력이 떨어진다는 문제를 직면했습니다.
+                <br>
+                <br>해당 문제를 해결하기 위해서 구조적인 개선을 해결방법으로 결정했고 이에 Multigate MOSFET이 등장하게 되었습니다. 
+                <br>그래서 Advanced에서는 Multigate MOSFET의 대표적인 FinFET과
+                <br>GAA, 거기에 추가로 삼성에서 제작에 성공한 MBCFET도 설명해보겠습니다.
+                <hr>
                 <ol start="2">
                     <li>Advanced
                         <ol>
